@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecasting</h1>
+        <input type="text" id="cityInput" placeholder="Enter city name..." />
+        <button onclick="getWeather()">Get Weather</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        function getWeather() {
+            const city = document.getElementById("cityInput").value.trim();
+            const resultDiv = document.getElementById("result");
+
+            if (!city) {
+                resultDiv.innerHTML = "Please enter a city.";
+                return;
+            }
+
+            fetch(`/weather?city=${encodeURIComponent(city)}`)
+                .then(response => {
+                    if (!response.ok) {
+                        return response.json().then(errData => {
+                            throw new Error(errData.error || "Something went wrong");
+                        });
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.error) {
+                        resultDiv.innerHTML = `<p class="error">${data.error}</p>`;
+                    } else {
+                        resultDiv.innerHTML = `
+                            <h2>${data.city}</h2>
+                            <p>Temperature: ${data.temperature} °C</p>
+                            <p>Humidity: ${data.humidity}%</p>
+                            <p>Weather: ${data.weather}</p>
+                            <p>Wind Speed: ${data.wind_speed} m/s</p>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    resultDiv.innerHTML = `<p class="error">Error: ${error.message}</p>`;
+                });
+        }
+    </script>
+</body>
+</html>
