@@ -662,18 +662,6 @@ git push origin feature/your-feature-name
 
 ---
 
-## 📝 License
-
-This project is open source under the **MIT License** — free to use, modify, and distribute.
-
-```
-MIT License — Copyright (c) 2024 abhinendra9792
-```
-
----
-
-<div align="center">
-
 **Built with ❤️ by [abhinendra9792](https://github.com/abhinendra9792)**
 
 <br/>
