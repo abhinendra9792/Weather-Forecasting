@@ -553,56 +553,56 @@ python app.py
 ## 📸 Live Demo & Screenshots
 
 ### 🏠 Demo 1 — Hero Landing Page
-![Landing Page](demo/Demo-1.png)
+![Landing Page](Demo/Demo-1.png)
 
 > The hero section presents a bold gradient headline **"Smart Weather, Anytime, Anywhere"** on a deep dark background with subtle purple/blue ambient glow. Users can search any city worldwide, tap **"Use My Location"** for instant GPS-based weather, or scroll to the Voice Assistant. The top navigation links to Forecast, Map, Air Quality, and Community sections.
 
 ---
 
 ### 🎙️ Demo 2 — Voice Assistant Interface
-![Voice Assistant](demo/Demo-2.png)
+![Voice Assistant](Demo/Demo-2.png)
 
 > The Voice Assistant panel expands to reveal five quick-question chips — *"Will it rain today?", "What is the temperature?", "Umbrella needed?", "Air quality?", "What to wear?"* — enabling one-tap weather queries. A **"Hold to Speak"** microphone button activates the browser's SpeechRecognition API for hands-free input. Users can also type in the free-form input box. Responses are both displayed and spoken aloud via the Web Speech API.
 
 ---
 
 ### 🌡️ Demo 3 — Live Weather Dashboard
-![Weather Dashboard](demo/Demo-3.png)
+![Weather Dashboard](Demo/Demo-3.png)
 
 > Searching **Lucknow, IN** renders the live weather card at 09:44 AM showing **25°C / Haze**. Six metric tiles show: Humidity (69%), Wind (5.14 m/s), Visibility (4.5 km), Pressure (1006 hPa), Sunrise (05:29 AM), Sunset (06:37 PM). Data is sourced from `GET /weather` → `build_current_weather()`. The **Personalized Suggestions** section below renders AI tips dynamically based on the live conditions.
 
 ---
 
 ### 📅 Demo 4 — AI Forecast & Daily Planning
-![Hourly Forecast](demo/Demo-4.png)
+![Hourly Forecast](Demo/Demo-4.png)
 
 > The Forecast section shows two AI-generated day summaries: **"All Clear"** (no weather impacts on activities) and **"Great Day Out"** (ideal for outdoor plans). The **Hourly Forecast** scrollable timeline displays 3-hour slots across 5 days — each showing temperature, rain probability %, and wind speed. The **"Best Time to Go Outside"** card pinpoints the optimal window — *Today 11:30 AM · 29.1°C · Broken Clouds · 0% rain · 2.62 m/s*.
 
 ---
 
 ### 🗺️ Demo 5 — Interactive Weather Map
-![Interactive Map](demo/Demo-5.png)
+![Interactive Map](Demo/Demo-5.png)
 
 > A full **Leaflet.js** interactive map with **OpenStreetMap** base layer and **OpenWeatherMap tile overlays**. Users toggle between **Rain**, **Wind**, **Temperature**, and **Clouds** layer views. Clicking any location pins it and shows coordinates — here **Lucknow (26.850, 80.917)** is pinned on a northern India view. The map supports full zoom, pan, and layer switching.
 
 ---
 
 ### 🫁 Demo 6 — Air Quality & Health Panel
-![Air Quality](demo/Demo-6.png)
+![Air Quality](Demo/Demo-6.png)
 
 > The AQI dashboard displays a large red indicator circle: **"Very Poor"** (AQI Level 5 — the most severe tier). The right panel shows the full **Pollutant Breakdown**: PM2.5 (106.99 µg/m³), PM10 (131.1 µg/m³), O₃ Ozone (131.25 µg/m³), NO₂ (3.51 µg/m³), CO (549.27 µg/m³). Three AI-generated health alerts appear: *"Hazardous air quality!"*, *"Health emergency — stay indoors."*, *"N95 mask required if outdoors."* — all auto-generated from the AQI Level 5 mapping in `app.py`.
 
 ---
 
 ### 🤖 Demo 7 — Voice Q&A in Action + Community Reports
-![Voice Q&A](demo/Demo-7.png)
+![Voice Q&A](Demo/Demo-7.png)
 
 > A live voice assistant exchange: user asked **"Will it rain today?"** and received **"No, no rain expected in Lucknow. Humidity is 69%."** — the backend queried the `/forecast` rain probability and composed a natural language response. Below, the **Community Weather Reports** section begins with condition buttons (Rain, Storm, Fog) and a **Recent Reports** feed — showing no reports submitted in the last 2 hours at this time.
 
 ---
 
 ### 👥 Demo 8 — Community Report Submission
-![Community Reports](demo/Demo-8.png)
+![Community Reports](Demo/Demo-8.png)
 
 > The full Community Reports panel. Users submit a hyperlocal weather condition by tapping: **Rain 🌧️**, **Storm 🌪️**, **Fog ⬜**, **Hail 🌨️**, **Strong Wind 💨**, or **Clear Sky 🌟** — with an optional text description box. Clicking **"Submit Report"** posts to `POST /report`, saving to SQLite with a 2-hour TTL. Reports expire automatically — no manual cleanup. The **Recent Reports** panel on the right live-refreshes with nearby crowd-sourced conditions.
 
